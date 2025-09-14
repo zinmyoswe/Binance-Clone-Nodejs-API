@@ -1,10 +1,15 @@
 const axios = require('axios');
 const crypto = require('crypto');
+require('dotenv').config();
 
 // Binance Futures Testnet REST API base
 const REST_BASE = process.env.BINANCE_REST_BASE || 'https://testnet.binancefuture.com';
 const API_KEY = process.env.BINANCE_API_KEY;
 const SECRET_KEY = process.env.BINANCE_SECRET_KEY;
+
+// 🔹 Debug: check if keys are loaded
+console.log("API_KEY:", API_KEY ? "Loaded" : "Missing");
+console.log("SECRET_KEY:", SECRET_KEY ? "Loaded" : "Missing");
 
 /**
  * Sign the query string for authenticated endpoints
